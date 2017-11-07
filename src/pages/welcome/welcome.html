@@ -1,0 +1,9 @@
+<ion-content scroll="false">
+  <div class="title-box" padding>
+    <span class="welcome-title">{{ 'WELCOME_TITLE' | translate }}</span>
+  </div>
+  <div padding>
+    <button ion-button block [navPush]="signupPage" margin-bottom>{{ 'SIGNUP' | translate }}</button>
+    <button ion-button block [navPush]="loginPage">{{ 'LOGIN' | translate }}</button>
+  </div>
+</ion-content>

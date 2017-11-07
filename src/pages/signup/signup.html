@@ -1,0 +1,105 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{ 'SIGNUP_TITLE' | translate }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <form>
+        <ion-list>
+
+            <ion-item>
+                <ion-label stacked>{{ 'FIRST_NAME' | translate }}</ion-label>
+                <ion-input type="text" [(ngModel)]="user.firstname" name="firstname"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'LAST_NAME' | translate }}</ion-label>
+                <ion-input type="text" [(ngModel)]="user.lastname" name="lastname"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'GENDER' | translate }}</ion-label>
+                <ion-select [(ngModel)]="user.gender" name="gender">
+                    <ion-option value="FEMALE">{{ 'FEMALE' | translate }}</ion-option>
+                    <ion-option value="MALE">{{ 'MALE' | translate }}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'EMAIL' | translate }}</ion-label>
+                <ion-input type="email" [(ngModel)]="user.email" name="email"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'PASSWORD' | translate }}</ion-label>
+                <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'REPEAT_PASSWORD' | translate }}</ion-label>
+                <ion-input type="password" [(ngModel)]="user.repeatedPassword" name="repeatPassword"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'BIRTHDAY' | translate }}</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="user.birthday" name="birthday"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'PHONE' | translate }}</ion-label>
+                <ion-input type="tel" [(ngModel)]="user.phone" name="phone"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'STREET' | translate }}</ion-label>
+                <ion-input type="text" [(ngModel)]="user.street" name="street"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'POSTCODE' | translate }}</ion-label>
+                <ion-input type="number" [(ngModel)]="user.postcode" name="postcode"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'CITY' | translate }}</ion-label>
+                <ion-input type="text" [(ngModel)]="user.city" name="city"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>{{ 'USERROLE' | translate }}</ion-label>
+                <ion-select [(ngModel)]="user.userRole" name="userRole">
+                    <ion-option value="BOARD">{{ 'BOARD' | translate }}</ion-option>
+                    <ion-option value="DEP_HEAD">{{ 'DEP_HEAD' | translate }}</ion-option>
+                    <ion-option value="COACH">{{ 'COACH' | translate }}</ion-option>
+                    <ion-option value="PLAYER">{{ 'PLAYER' | translate }}</ion-option>
+                    <ion-option value="NO_MEMBER">{{ 'NO_MEMBER' | translate }}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-row padding>
+                <ion-col>
+                    <ion-label margin-vertical>
+                        {{ 'AGB_CONFIRM_TEXT' | translate }}
+                        <a (click)="showAGB()">{{ 'AGB_TITLE' | translate }}</a>
+                    </ion-label>
+                </ion-col>
+                <ion-col>
+                    <ion-checkbox
+                            [(ngModel)]="user.agbAccepted" color="dark" checked="false" margin-vertical float-end
+                            name="agbAccepted"
+                    >
+                    </ion-checkbox>
+                </ion-col>
+            </ion-row>
+
+            <div padding (click)="doSignUp()">
+                <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+            </div>
+
+        </ion-list>
+    </form>
+</ion-content>
