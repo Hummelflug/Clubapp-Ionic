@@ -1,0 +1,14 @@
+<ion-item *ngFor="let news of allNews" (click)="openNewsDetails(news)">
+
+    <ion-thumbnail item-start>
+        <img-loader src="{{getSrcURL(news.id)}}" useImg>
+        </img-loader>
+    </ion-thumbnail>
+
+    <h2>{{news.title}}</h2>
+
+    <p>{{news.description}}</p>
+
+    <button ion-button clear item-end>{{ 'VIEW_DETAILS' | translate }}</button>
+
+</ion-item>

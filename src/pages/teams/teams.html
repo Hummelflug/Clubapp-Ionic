@@ -10,5 +10,37 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-card *ngFor="let team of teams">
+        <ion-card-header>
+            {{ team.name }}
+        </ion-card-header>
 
+        <ion-list>
+            <button ion-item (click)="openMembersPage(team)">
+                <ion-icon name="people" item-start></ion-icon>
+                {{ "MEMBER" | translate }}
+            </button>
+
+            <button ion-item>
+                <ion-icon name="calendar" item-start></ion-icon>
+                {{ "EVENTS" | translate }}
+            </button>
+
+            <button ion-item (click)="openNewsPage(team)">
+                <ion-icon name="paper" item-start></ion-icon>
+                {{ "NEWS_CONTENT" | translate }}
+            </button>
+
+            <button ion-item>
+                <ion-icon name="cash" item-start></ion-icon>
+                {{ "TEAM_KITTY" | translate }}
+            </button>
+
+            <button ion-item>
+                <ion-icon name="stats" item-start></ion-icon>
+                {{ "STATS" | translate }}
+            </button>
+
+        </ion-list>
+    </ion-card>
 </ion-content>

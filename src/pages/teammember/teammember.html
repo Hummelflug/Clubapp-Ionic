@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{ team.name }}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-list-header>
+            {{ "COACHES" | translate }}
+        </ion-list-header>
+        <ion-item *ngFor="let coach of coaches">
+            <ion-avatar item-start>
+                <img-loader src="{{ this.url + '/user/' + this.userId + '/profile.jpg' }}" useImg [spinner]="false">
+                </img-loader>
+            </ion-avatar>
+            <h2>{{ coach.firstName }} {{ coach.lastName }}</h2>
+            <p>{{ coach.position }}</p>
+        </ion-item>
+
+        <ion-list-header>
+            {{ "PLAYERS" | translate }}
+        </ion-list-header>
+        <ion-item *ngFor="let player of players">
+            <ion-avatar item-start>
+                <img-loader src="{{ this.url + '/user/' + this.userId + '/profile.jpg' }}" useImg [spinner]="false">
+                </img-loader>
+            </ion-avatar>
+            <h2>{{ player.firstName }} {{ player.lastName }}</h2>
+            <p>{{ player.position }}</p>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

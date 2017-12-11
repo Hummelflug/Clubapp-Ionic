@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{ 'BUG_REPORT_TITLE' | translate }}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div padding-horizontal text-justify>{{ 'BUG_REPORT_SUBTITLE' | translate }}</div>
+
+    <form (submit)="sendBugReport()">
+        <ion-item>
+            <ion-label color="primary" stacked>{{ 'BUG_REPORT_INPUT_TITLE' | translate }}</ion-label>
+            <ion-input type="text" [(ngModel)]="bugReport.title" name="title"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-label color="primary" stacked padding-bottom>
+                {{ 'BUG_REPORT_INPUT_DESCRIPTION' | translate }}
+            </ion-label>
+            <ion-textarea
+                    class="descriptionarea" autoresize [(ngModel)]="bugReport.description" name="description" rows="6"
+                    maxLength="500">
+            </ion-textarea>
+        </ion-item>
+
+        <div padding>
+            <button ion-button color="primary" block>{{ 'BUG_REPORT_SUBMIT' | translate }}</button>
+        </div>
+    </form>
+
+</ion-content>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NavController, ToastController} from 'ionic-angular';
+import {Events, NavController, ToastController} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {UserProvider} from "../../providers/user/user";
 import {TabsPage} from "../tabs/tabs";
@@ -19,7 +19,8 @@ export class LoginPage {
     // Our translated text strings
     private loginErrorString: string;
 
-    constructor(private navCtrl: NavController,
+    constructor(public events: Events,
+                private navCtrl: NavController,
                 private storage: Storage,
                 private toastCtrl: ToastController,
                 private translateService: TranslateService,
@@ -38,8 +39,10 @@ export class LoginPage {
             .then(() => {
                 this.userProvider.login()
                     .then((resp) => {
-                        this.storage.set('localUser', JSON.parse(resp.data));
-                        this.navCtrl.setRoot(TabsPage);
+                        this.storage.set('localUser', JSON.parse(resp.data)).then((date) => {
+                            this.events.publish('user:login');
+                            this.navCtrl.setRoot(TabsPage);
+                        });
                     })
                     .catch( (error) => {
                         // Unable to log in

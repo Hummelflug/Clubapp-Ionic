@@ -10,40 +10,25 @@
 </ion-header>
 
 <ion-content padding>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="circles">
+        </ion-refresher-content>
+    </ion-refresher>
+
     <ion-list>
         <ion-list-header>{{ 'CLUB_NEWS_TITLE' | translate }}</ion-list-header>
-        <ion-item *ngFor="let news of clubNews">
-            <ion-thumbnail item-start>
-                <ion-icon name="image"></ion-icon>
-            </ion-thumbnail>
-            <h2>{{news.title}}</h2>
-            <p>{{news.description}}</p>
-            <button ion-button clear item-end>{{ 'VIEW_DETAILS' | translate }}</button>
-        </ion-item>
+        <news [allNews]="clubNews" [newsType]="'CLUB'"></news>
     </ion-list>
 
     <ion-list>
         <ion-list-header>{{ 'DEPARTMENT_NEWS_TITLE' | translate }}</ion-list-header>
-        <ion-item *ngFor="let news of departmentNews">
-            <ion-thumbnail item-start>
-                <ion-icon name="image"></ion-icon>
-            </ion-thumbnail>
-            <h2>{{news.title}}</h2>
-            <p>{{news.description}}</p>
-            <button ion-button clear item-end>{{ 'VIEW_DETAILS' | translate }}</button>
-        </ion-item>
+        <news [allNews]="departmentNews" [newsType]="'DEPARTMENT'"></news>
     </ion-list>
 
     <ion-list>
         <ion-list-header>{{ 'TEAM_NEWS_TITLE' | translate }}</ion-list-header>
-        <ion-item *ngFor="let news of teamNews">
-            <ion-thumbnail item-start>
-                <ion-icon name="image"></ion-icon>
-            </ion-thumbnail>
-            <h2>{{news.title}}</h2>
-            <p>{{news.description}}</p>
-            <button ion-button clear item-end>{{ 'VIEW_DETAILS' | translate }}</button>
-        </ion-item>
+        <news [allNews]="teamNews" [newsType]="'TEAM'"></news>
     </ion-list>
 
 </ion-content>

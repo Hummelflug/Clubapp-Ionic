@@ -1,0 +1,45 @@
+<ion-item *ngFor="let event of events" no-lines>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-2 class="datetime-col">
+                <div>{{ getWeekDay(event.startTime) }}</div>
+                <div>{{ event.startTime | date: 'dd.MM.' }}</div>
+            </ion-col>
+            <ion-col col-8 text-wrap>
+                <div *ngIf="getEventType(event.eventType)">
+                    <b>
+                        {{ getEventType(event.eventType) }}
+                    </b>
+                </div>
+                <div>
+                    <i>
+                        <b>
+                            {{ event.title }}
+                        </b>
+                    </i>
+                </div>
+                <div>
+                    <span>{{ "MEETING_DATE" | translate }}: </span>
+                    <span>{{ event.meetingTime | date: 'H:mm' }}</span>
+                    <span>{{ "TIMESTAMP_POSTFIX" | translate }}</span>
+                </div>
+                <div>
+                    <span>{{ "START_DATE" | translate }}: </span>
+                    <span>{{ event.startTime | date: 'H:mm' }}</span>
+                    <span>{{ "TIMESTAMP_POSTFIX" | translate }}</span>
+                </div>
+                <div>
+                    <span>{{ "END_DATE" | translate }}: </span>
+                    <span>{{ event.endTime | date: 'H:mm' }}</span>
+                    <span>{{ "TIMESTAMP_POSTFIX" | translate }}</span>
+                </div>
+            </ion-col>
+            <div class="divider"></div>
+            <ion-col col-2 text-right>
+                <button ion-button icon-only clear text-right>
+                    <ion-icon name="create"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-item>

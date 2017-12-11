@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {AlertController, NavController, ToastController} from "ionic-angular";
+import {AlertController, Events, NavController, ToastController} from "ionic-angular";
 import {Storage} from "@ionic/storage";
 import {UserProvider} from "../../providers/user/user";
 import {TabsPage} from "../tabs/tabs";
@@ -48,8 +48,8 @@ export class SignupPage {
     private AGBText: string;
     private OkText: string;
 
-    constructor(private alertCtrl: AlertController, private storage: Storage, private navCtrl: NavController,
-                private userProvider: UserProvider, private toastCtrl: ToastController,
+    constructor(private alertCtrl: AlertController, public events: Events, private storage: Storage,
+                private navCtrl: NavController, private userProvider: UserProvider, private toastCtrl: ToastController,
                 private translateService: TranslateService) {
 
         this.translateService.get(['SIGNUP_ERROR_FIRST_NAME', 'SIGNUP_ERROR_LAST_NAME', 'SIGNUP_ERROR_GENDER',
@@ -100,8 +100,10 @@ export class SignupPage {
                     })
                         .then((resp) => {
                             console.log(resp);
-                            this.storage.set('localUser', JSON.parse(resp.data));
-                            this.navCtrl.setRoot(TabsPage);
+                            this.storage.set('localUser', JSON.parse(resp.data)).then((date) => {
+                                this.events.publish('user:login');
+                                this.navCtrl.setRoot(TabsPage);
+                            });
                         })
                         .catch((error) => {
                             console.log(error);

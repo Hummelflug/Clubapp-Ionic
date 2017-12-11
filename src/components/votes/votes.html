@@ -1,0 +1,12 @@
+<ion-item *ngFor="let vote of votes" (click)="openPage(vote)">
+
+    <ion-thumbnail item-start>
+        <img-loader src="" useImg>
+        </img-loader>
+    </ion-thumbnail>
+
+    <h2>{{vote.questionText}}</h2>
+
+    <button ion-button clear item-end>{{ 'VIEW_DETAILS' | translate }}</button>
+
+</ion-item>

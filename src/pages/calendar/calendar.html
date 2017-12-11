@@ -9,6 +9,31 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+    <div>
+        <ion-segment [(ngModel)]="filter">
+            <ion-segment-button value="ALL">
+                {{ "ALL_EVENTS" | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="GAME">
+                {{ "GAME_TITLE" | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="TRAINING">
+                {{ "TRAINING_TITLE" | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="TOURNAMENT">
+                {{ "TOURNAMEMT_TITLE" | translate }}
+            </ion-segment-button>
+            <ion-segment-button value="OTHERS">
+                {{ "OTHERS_TITLE" | translate }}
+            </ion-segment-button>
+        </ion-segment>
+    </div>
 
+    <ion-title padding-top>
+        {{ "UPCOMING_EVENTS" | translate }}
+    </ion-title>
+
+    <events [events]="getEvents()">
+    </events>
 </ion-content>

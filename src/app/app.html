@@ -1,11 +1,14 @@
 <ion-menu [content]="content" id="sidemenu" [enabled]=true>
     <ion-header>
         <ion-toolbar>
-            <ion-title>Menu</ion-title>
+            <ion-title>{{ 'MENU' | translate}}</ion-title>
         </ion-toolbar>
     </ion-header>
     <ion-content>
         <ion-list>
+            <ion-list-header *ngIf="currentUser">
+                {{ currentUser.firstName }} {{ currentUser.lastName }}
+            </ion-list-header>
             <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
                 {{p.title}}
             </button>

@@ -1,7 +1,9 @@
 {
   "BACK_BUTTON_TEXT": "Zurück",
   "CANCEL_BUTTON": "Schließen",
+  "MENU": "Menü",
   "OK_BUTTON": "Ok",
+  "TIMESTAMP_POSTFIX": "Uhr",
 
   "WELCOME_TITLE": "Willkommen",
 
@@ -54,16 +56,66 @@
   "LOGOUT": "Abmelden",
 
   "CALENDAR_TITLE": "Kalender",
-  "NEWS_TITLE": "Neuigkeiten",
+  "UPCOMING_EVENTS": "Anstehende Termine",
+  "ALL_EVENTS": "Alle",
+  "GAME_TITLE": "Spiele",
+  "OTHERS_TITLE": "Sonstiges",
+  "TOURNAMEMT_TITLE": "Turniere",
+  "TRAINING_TITLE": "Training",
+  "MONDAY": "MO",
+  "TUESDAY": "DI",
+  "WEDNESDAY": "MI",
+  "THURSDAY": "DO",
+  "FRIDAY": "FR",
+  "SATURDAY": "SA",
+  "SUNDAY": "SO",
+  "GAME_TITLE": "Spiel",
+  "TOURNAMENT_TITLE": "Turnier",
+  "TRAINING_TITLE": "Training",
+  "MEETING_DATE": "Treffen-Zeitpunkt",
+  "START_DATE": "Start-Zeitpunkt",
+  "END_DATE": "End-Zeitpunkt",
+  "LOADING_SCHEDULE_ERROR": "Fehler beim Laden der Termine",
+
   "MY_TEAMS_TITLE": "Meine Teams",
+  "MEMBER": "Mitglieder",
+  "EVENTS": "Termine",
+  "NEWS_CONTENT": "Neuigkeiten/Abstimmungen",
+  "TEAM_KITTY": "Mannschaftskasse",
+  "STATS": "Statistiken",
+  "LOADING_TEAMS_ERROR": "Fehler beim Laden der Teams. Versuche es erneut.",
+
+  "COACHES": "Trainer",
+  "PLAYERS": "Spieler",
+  "LOADING_TEAM_ERROR": "Fehler beim Laden des Teams. Versuche es erneut.",
 
   "NEXT_EVENTS_TITLE": "Nächsten Termine",
   "LAST_GAMES_TITLE": "Letzte Spiele",
   "NEXT_CLUB_EVENTS_TITLE": "Vereinstermine",
 
+  "NEWS_TITLE": "Neuigkeiten",
   "CLUB_NEWS_TITLE": "Vereinsneuigkeiten",
   "DEPARTMENT_NEWS_TITLE": "Abteilungsneuigkeiten",
   "TEAM_NEWS_TITLE": "Teamneuigkeiten",
   "VIEW_DETAILS": "Details",
-  "LOADING_NEWS_ERROR": "Fehler beim Laden der Nachrichten. Versuche es erneut."
+  "LOADING_NEWS_ERROR": "Fehler beim Laden der Nachrichten. Versuche es erneut.",
+
+  "VOTES_TITLE": "Abstimmungen",
+  "VOTE_TITLE": "Abstimmung",
+  "CLUB_VOTES_TITLE": "Vereinsabstimmungen",
+  "DEPARTMENT_VOTES_TITLE": "Abteilungsabstimmungen",
+  "TEAM_VOTES_TITLE": "Teamabstimmungen",
+  "LOADING_VOTES_ERROR": "Fehler beim Laden der Abstimmungen. Versuche es erneut.",
+  "VOTE_EXPIRED_AT": "Abstimmung ist abgelaufen am",
+  "VOTE_WILL_EXPIRE_AT": "Abstimmung läuft bis ",
+
+  "BUG_REPORT_TITLE": "Fehler melden",
+  "BUG_REPORT_SUBTITLE": "Hilf uns die App zu verbessern und melde mögliche Fehler.",
+  "BUG_REPORT_INPUT_TITLE": "Welcher Fehler wurde gefunden?",
+  "BUG_REPORT_INPUT_DESCRIPTION": "Beschreibe den Fehler:",
+  "BUG_REPORT_SUBMIT": "Melde Fehler",
+  "BUG_REPORT_SUBMIT_NO_TITLE": "Bitte gib an, um welchen Fehler es sich handelt.",
+  "BUG_REPORT_SUBMIT_NO_DESCRIPTION": "Bitte beschreibe genauer, um welchen Fehler es sich handelt.",
+  "SENDING_BUG_REPORT_SUCCESS": "Vielen Dank für das Melden des Fehlers.",
+  "SENDING_BUG_REPORT_ERROR": "Fehler beim Sender des Fehlers."
 }

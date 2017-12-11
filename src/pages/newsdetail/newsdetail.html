@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle="left">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{ 'NEWS_TITLE' | translate }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <img-loader
+            *ngIf="newsType == 'CLUB'"
+            src="{{this.url + '/club/' + clubId + '/news/' + news.id + '/image.jpg'}}"
+            width="100vw"
+            height="100vw"
+    >
+    </img-loader>
+    <img-loader
+            *ngIf="newsType == 'DEPARTMENT'"
+            src="{{this.url + '/department/news/' + news.id + '/image.jpg'}}"
+            width="100vw"
+            height="100vw"
+    >
+    </img-loader>
+    <img-loader
+            *ngIf="newsType == 'TEAM'"
+            src="{{this.url + '/team/news/' + news.id + '/image.jpg'}}"
+            width="100vw"
+            height="100vw"
+    >
+    </img-loader>
+
+    <div padding>
+        <ion-title>
+            {{ news.title }}
+        </ion-title>
+        <div padding>
+            {{news.lastModification | date: 'dd.MM.yyyy H:mm' }}
+        </div>
+        <div padding>
+            {{ news.description }}
+        </div>
+    </div>
+</ion-content>

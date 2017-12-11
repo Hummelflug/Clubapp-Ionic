@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{ 'VOTE_TITLE' | translate }}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+        <ion-list-header>
+            {{ vote.questionText }}
+        </ion-list-header>
+
+        <ion-item *ngFor="let answer of vote.answers; let i = index">
+            <ion-label>{{ answer.answerText }}</ion-label>
+            <ion-checkbox
+                    [disabled]="isExpired()"
+                    [checked]="answer.voters.includes(this.userId)"
+                    (click)="voteForAnswer(answer.id)">
+            </ion-checkbox>
+        </ion-item>
+
+        <div *ngIf="isExpired()" padding>
+            <span>{{ 'VOTE_EXPIRED_AT' | translate }}</span>
+            <span>{{ vote.expirationTime | date: 'dd.MM.yyyy - H:mm' }}</span>
+            <span>{{ 'TIMESTAMP_POSTFIX' | translate }}</span>
+        </div>
+
+        <div *ngIf="vote.expirationTime && !isExpired()" padding>
+            <span>{{ 'VOTE_WILL_EXPIRE_AT' | translate }}</span>
+            <span>{{ vote.expirationTime | date: 'dd.MM.yyyy - H:mm' }}</span>
+            <span>{{ 'TIMESTAMP_POSTFIX' | translate }}</span>
+        </div>
+
+    </ion-list>
+
+</ion-content>

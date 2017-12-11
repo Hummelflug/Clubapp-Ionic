@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {HomePage} from "../home/home";
-import {MenuController} from "ionic-angular";
-import {NewsPage} from "../news/news";
+import {MenuController } from "ionic-angular";
 import {TeamsPage} from "../teams/teams";
 import {CalendarPage} from "../calendar/calendar";
+import {ClubbookPage} from "../clubbook/clubbook";
+import {NewsTabsPage} from "../newstabs/newstabs";
 
 @Component({
     selector: 'page-tabs',
@@ -13,7 +14,8 @@ export class TabsPage {
     homeRoot: any = HomePage;
     teamRoot: any = TeamsPage;
     calendarRoot: any = CalendarPage;
-    newsRoot: any = NewsPage;
+    newsTabsRoot: any = NewsTabsPage;
+    clubBookRoot: any = ClubbookPage;
 
     constructor(private menuCtrl: MenuController) {
     }
